@@ -73,7 +73,7 @@ useEffect(() => {
 
 
 
-  // Recherche directe via l'API
+  
   const handleSearchSubmit = async (e) => {
     e.preventDefault();
     if (!search.trim()) return;
@@ -89,7 +89,12 @@ useEffect(() => {
     }
   };
 
-  // Gestion des favoris
+
+
+
+
+
+
   const toggleFavorite = (pokemon) => {
     if (favorites.some((fav) => fav.id === pokemon.id)) {
       setFavorites(favorites.filter((fav) => fav.id !== pokemon.id));
@@ -110,7 +115,9 @@ useEffect(() => {
             Pokédex
           </h1>
 
-          {/* Search Bar & Favorite Filter */}
+        
+
+
           <div className="flex items-center gap-3 w-full md:w-auto">
             <form onSubmit={handleSearchSubmit} className="relative flex-1 md:w-80">
               <input
@@ -137,7 +144,10 @@ useEffect(() => {
           </div>
         </header>
 
-        {/* Content Section */}
+        
+
+
+
         {loading ? (
           <div className="flex justify-center items-center h-64">
             <div className="animate-spin rounded-full h-12 w-12 border-4 border-red-500 border-t-transparent"></div>
@@ -198,7 +208,10 @@ useEffect(() => {
           </div>
         )}
 
-        {/* Pagination Controls */}
+        
+
+
+
         {!showFavoritesOnly && !search && (
           <div className="flex justify-between items-center mt-8">
             <button
@@ -222,7 +235,11 @@ useEffect(() => {
           </div>
         )}
 
-        {/* Modal Détails du Pokémon */}
+      
+
+
+
+
         {selectedPokemon && (
           <div className="fixed inset-0 bg-black/70 backdrop-blur-sm flex justify-center items-center p-4 z-50">
             <div className="bg-slate-800 border border-slate-700 rounded-3xl p-6 max-w-md w-full relative max-h-[90vh] overflow-y-auto">
@@ -258,7 +275,11 @@ useEffect(() => {
                   ))}
                 </div>
 
-                {/* Mesures */}
+            
+
+
+
+
                 <div className="grid grid-cols-2 gap-4 w-full bg-slate-900/50 p-4 rounded-xl mb-6 text-center">
                   <div>
                     <span className="text-xs text-gray-400 block">Taille</span>
@@ -270,7 +291,11 @@ useEffect(() => {
                   </div>
                 </div>
 
-                {/* Stats */}
+            
+
+
+
+            
                 <div className="w-full">
                   <h3 className="text-lg font-bold mb-3 text-left">Statistiques</h3>
                   <div className="space-y-3">
